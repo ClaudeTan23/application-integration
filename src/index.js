@@ -3,11 +3,38 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Main } from './Components/Main.tsx';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Cats } from './Components/Cats.tsx';
+import { Rick } from './Components/Rick.tsx';
+import { Table } from './Components/Table.tsx';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main.Body />,
+    children: [
+      {
+        path: "/",
+        element: <Table.Cars />
+      },
+      {
+        path: "/cats",
+        element: <Cats.Cat />
+      },
+      {
+        path: "/rick",
+        element: <Rick.Ricks />
+      }
+    ]
+  }
+]);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
