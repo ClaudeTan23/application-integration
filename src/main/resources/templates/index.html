@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <div style="padding: 10px 2px; font-weight: 600; font-family: Arial, Helvetica, sans-serif;">
+        <span>Welcome</span>
+        <span th:text="${user}" />
+    </div>
+    <div style="padding: 10px 0;">
+        <a href="/logout"
+            style="padding: 10px; border-radius: 4px; background-color: #0555F6; color: #FAFAFA; font-size: 18px; font-weight: 600; text-decoration: none; margin-bottom: 10px; font-family: 'Times New Roman', Times, serif;">
+            Sign Out
+        </a>
+    </div>
+</html>
+
+<script>
+    window.history.pushState({}, "", window.location.origin);
+</script>
